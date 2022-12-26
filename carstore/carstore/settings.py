@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'carstore.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Carstore_db',
+        'NAME': 'Saney00rus$Carstore_db',
         'USER': 'Saney00rus',
         'PASSWORD': 'S14a08n2000ey',
         'HOST': 'Saney00rus.mysql.pythonanywhere-services.com',
