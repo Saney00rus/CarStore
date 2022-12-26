@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-owsnyc8n^vh_51no%^ix9urn(&iaf_$%h2ar8%f9oe(=2y0ka6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ctotorgservis.keenetic.pro', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['ctotorgservis.keenetic.pro', 'localhost', '127.0.0.1', '192.168.1.27']
 
 
 # Application definition
