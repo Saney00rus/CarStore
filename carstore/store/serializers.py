@@ -16,7 +16,7 @@ class CarstoreSerializer(serializers.Serializer):
     year = serializers.IntegerField()
     millage = serializers.IntegerField()
     owners = serializers.IntegerField()
-    images = serializers.ImageField(null=True, blank=True)
+    images = serializers.ImageField()
     price = serializers.IntegerField()
     description = serializers.CharField()
     user = serializers.IntegerField()
