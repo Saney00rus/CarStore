@@ -2,8 +2,8 @@ from django.db import models
 
 
 class ad_car(models.Model):
-    mark = models.CharField(max_length=255, verbose_name='Марка', null=True)
-    mod = models.CharField(max_length=255, verbose_name='Модель', null=True)
+    mark = models.CharField(max_length=255, verbose_name='Марка')
+    mod = models.CharField(max_length=255, verbose_name='Модель')
     year = models.PositiveSmallIntegerField(verbose_name='Год выпуска')
     millage = models.PositiveIntegerField(verbose_name='Пробег')
     owners = models.PositiveSmallIntegerField(verbose_name='Кол-во владельцев')
