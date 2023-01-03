@@ -14,18 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from rest_framework.routers import SimpleRouter
+from django.urls import path
+from store.views import CarstoreAPIView
 
-from store.views import CarstoreViewSet
-
-router = SimpleRouter()
-
-router.register(r'cars', CarstoreViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('api/cars/', CarstoreAPIView.as_view())
 ]
-
-urlpatterns += router.urls
