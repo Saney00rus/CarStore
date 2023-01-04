@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from store.views import *
+from .yasg import urlpatterns as swagger
 
 
 urlpatterns = [
@@ -10,3 +11,5 @@ urlpatterns = [
     path('api/cars/<int:pk>/', CarstoreAPIUpdate.as_view()),
     path('api/carsdelete/<int:pk>/', CarstoreAPIDestroy.as_view()),
 ]
+
+urlpatterns += swagger
