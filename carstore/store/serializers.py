@@ -1,10 +1,10 @@
-from rest_framework.fields import ReadOnlyField
-from rest_framework.serializers import ModelSerializer
-from store.models import ad_car
+from .models import ad_car
+from rest_framework import serializers
 
 
-class CarstoreSerializer(ModelSerializer):
-    user = ReadOnlyField(source='user.username')
+class CarstoreSerializer(serializers.ModelSerializer):
+    user = serializers.HiddenField(default=serializers.CurrentUserDefault())
+
     class Meta:
         model = ad_car
         fields = '__all__'

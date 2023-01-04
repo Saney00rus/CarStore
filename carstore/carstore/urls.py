@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 from store.views import *
-from rest_framework import routers
 
-router = routers.SimpleRouter()
-router.register(r'cars', CarstoreViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('auth/', include('rest_framework.urls')),
+    path('api/cars/', CarstoreAPIList.as_view()),
+    path('api/cars/<int:pk>/', CarstoreAPIUpdate.as_view()),
+    path('api/carsdelete/<int:pk>/', CarstoreAPIDestroy.as_view()),
 ]

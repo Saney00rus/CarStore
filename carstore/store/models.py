@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -10,5 +11,7 @@ class ad_car(models.Model):
     images = models.ImageField(upload_to='photos', verbose_name='Фото', null=True, blank=True)
     price = models.PositiveIntegerField(verbose_name='Стоимость')
     description = models.TextField(null=True, verbose_name='Описание')
-    user = models.ForeignKey('auth.User', on_delete=models.CASCADE, null=True, verbose_name='Пользователь')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь')
 
+    def __str__(self):
+        return self.mark

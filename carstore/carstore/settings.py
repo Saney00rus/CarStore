@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-owsnyc8n^vh_51no%^ix9urn(&iaf_$%h2ar8%f9oe(=2y0ka6
 DEBUG = True
 
 ALLOWED_HOSTS = ['saney00rus.pythonanywhere.com', 'localhost', '127.0.0.1', '192.168.1.27']
-
 
 # Application definition
 
@@ -71,31 +69,30 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'carstore.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Saney00rus$Carstore_db',
-        'USER': 'Saney00rus',
-        'PASSWORD': 'S14a08n2000ey',
-        'HOST': 'Saney00rus.mysql.pythonanywhere-services.com',
-        'PORT': '',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'carstore_db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Saney00700',
-#         'HOST': 'localhost',
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'Saney00rus$Carstore_db',
+#         'USER': 'Saney00rus',
+#         'PASSWORD': 'S14a08n2000ey',
+#         'HOST': 'Saney00rus.mysql.pythonanywhere-services.com',
 #         'PORT': '',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carstore_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Saney00700',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -115,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -127,7 +123,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
@@ -138,3 +133,14 @@ STATIC_ROOT = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
