@@ -1,8 +1,7 @@
 from rest_framework import generics
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
-from store.models import ad_car
+from rest_framework.permissions import *
 from store.permissions import IsOwner
-from store.serializers import CarstoreSerializer
+from store.serializers import *
 
 
 class CarstoreAPIList(generics.ListCreateAPIView):

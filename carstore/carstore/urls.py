@@ -8,10 +8,10 @@ from .yasg import urlpatterns as swagger
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/drf-auth/', include('rest_framework.urls')),
-    path('api/cars/', CarstoreAPIList.as_view()),
-    path('api/cars/<int:pk>/', CarstoreAPIUpdateAndDestroy.as_view()),
+    path('api/cars/', CarstoreAPIList.as_view(), name='all_cars'),
+    path('api/cars/<int:pk>/', CarstoreAPIUpdateAndDestroy.as_view(), name='car_by_id'),
+    path('admin/', admin.site.urls, name='admin'),
+    path('api/drf-auth/', include('rest_framework.urls'), name='drf-auth'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/token/verify', TokenVerifyView.as_view(), name='token_verify'),
